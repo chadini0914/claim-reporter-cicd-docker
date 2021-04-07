@@ -24,7 +24,11 @@ stages:
             inputs:
               command: login
               containerRegistry: acr
-
-
-
-
+          - task: Docker@2
+            displayName: Build and Push
+            inputs:
+              command: buildAndPush
+              repository: contosoRepository
+              tags: |
+                test
+                push
