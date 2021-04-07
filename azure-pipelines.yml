@@ -13,7 +13,7 @@ stages:
   displayName: Build_stage
 
   jobs:
-    - job: docker
+    - job: docker1
       displayName: docker_login
       pool:
         vmImage: $(vmImageName)
