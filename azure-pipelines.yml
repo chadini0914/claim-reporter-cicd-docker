@@ -10,29 +10,34 @@ variables:
 stages:
 
 - stage: Build
-  displayName: Build_stage
+  displayName: try_build_docker
 
   jobs:
-    - job: docker1
-      displayName: docker_login
+    - job: docker_try
+      displayName: docker_try_build
       pool:
         vmImage: $(vmImageName)
 
 
       steps:
         - task: Docker@2
-          displayName: Login to ACR
+          displayName: try_Build
           inputs:
-            command: login
-            containerRegistry: acr
+            command: build
 
-    - job: docker2
-      displayName: docker_build&push
+- stage: Push
+  displayName: push_build_docker
+  condition: succeeded()
+
+  jobs:
+    - job: docker_buildpush
+      displayName: build&push
       pool:
         vmImage: $(vmImageName)
+
       steps:
         - task: Docker@2
-          displayName: Build and Push
+          displayName: BuildandPush
           inputs:
             command: buildAndPush
             repository: buildImages
