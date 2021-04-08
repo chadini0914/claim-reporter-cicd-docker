@@ -65,5 +65,5 @@ stages:
             WebAppName: 'claim-reporter-cicd-docker'
             DockerNamespace: 'acrrdsnodev'
             DockerRepository: 'buildimages'
-            DockerImageTag: '20210407.10'
+            DockerImageTag: $(buildID)
 
