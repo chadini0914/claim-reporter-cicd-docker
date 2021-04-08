@@ -60,7 +60,7 @@ stages:
         - task: AzureRmWebAppDeployment@4
           displayName: 'Deploy Azure App Service'
           inputs:
-            azureSubscription: '994d64b4-084a-4eef-ac28-3f1d1432feee'
+            azureSubscription: 'ARM'
             appType: 'webAppContainer'
             WebAppName: 'claim-reporter-cicd-docker'
             DockerNamespace: 'acrrdsnodev'
