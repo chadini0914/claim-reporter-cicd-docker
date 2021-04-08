@@ -48,14 +48,3 @@ stages:
             repository: 'buildimages' #comm
             tags: |
               $(buildID)
-        - task: AzureRmWebAppDeployment@4
-          displayName: 'Deploy Azure App Service'
-          inputs:
-            azureSubscription: 'ARM'
-            appType: 'webAppContainer'
-            WebAppName: 'claim-reporter-cicd-docker'
-            DockerNamespace: 'acrrdsnodev'
-            DockerRepository: 'buildimages'
-            DockerImageTag: $(buildID)
-            
-
