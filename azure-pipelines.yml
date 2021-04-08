@@ -45,7 +45,7 @@ stages:
           displayName: BuildandPush
           inputs:
             command: buildAndPush
-            repository: 'buildimages'
+            repository: 'buildimages' #comment
             tags: |
               $(buildID)
         - task: AzureRmWebAppDeployment@4
