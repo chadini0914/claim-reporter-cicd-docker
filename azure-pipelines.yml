@@ -45,6 +45,6 @@ stages:
           displayName: BuildandPush
           inputs:
             command: buildAndPush
-            repository: 'buildimages' #comm
+            repository: 'buildimages' #commm
             tags: |
               $(buildID)
